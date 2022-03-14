@@ -1,0 +1,253 @@
+.right-menu {
+  width: 350px;
+  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  right: -350px;
+  background-color: white;
+  z-index: 110;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &.active {
+    right: 0px;
+  }
+  @media (min-width: 992px) {
+    position: fixed;
+    right: 0;
+  }
+
+  .debite-card {
+    position: relative;
+    height: 170px;
+    min-height: 170px;
+    min-width: 300px;
+    border-radius: 15px;
+    color: white;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 100%;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(
+        35deg,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1)
+      );
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      z-index: -1;
+      border-radius: 10px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f8901c;
+      transform: rotate(5deg);
+      border-radius: 15px;
+      filter: blur(2px);
+      z-index: -2;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      .card-logo {
+        position: absolute;
+        width: 60px;
+        height: auto;
+        right: 30px;
+        top: 30px;
+      }
+      .card-chip {
+        position: absolute;
+        width: 50px;
+        height: auto;
+        left: 30px;
+        top: 40px;
+      }
+
+      .number,
+      .name,
+      .card-from,
+      .card-to {
+        position: absolute;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .number {
+        bottom: 60px;
+        left: 30px;
+      }
+      .name {
+        bottom: 30px;
+        left: 30px;
+      }
+      .card-from {
+        bottom: 45px;
+        right: 90px;
+      }
+      .card-to {
+        bottom: 45px;
+        right: 30px;
+      }
+      .card-ring {
+        position: absolute;
+        top: -226px;
+        left: 127px;
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 55px solid rgba(0, 0, 0, 0.1);
+        &::after {
+          position: absolute;
+          content: "";
+          top: 162px;
+          right: -145px;
+          height: 400px;
+          width: 400px;
+          border-radius: 50%;
+          background-color: transparent;
+          border: 55px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.CartContainer {
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  margin-bottom: 20px;
+
+  .cart {
+    margin-top: 10px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 250px;
+    max-height: 250px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .CartItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .imgbox {
+      width: 60px;
+      height: 60px;
+      max-width: 60px;
+      max-height: 60px;
+      border-radius: 10px;
+      background-color: #00ffc855;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .desc {
+      flex: 1;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      h4 {
+        font-size: 16px;
+        color: var(--primarycolor);
+      }
+      .qty {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        span {
+          color: var(--orangeColor);
+        }
+        .sign {
+          display: flex;
+          i {
+            width: 20px;
+            height: 20px;
+            background-color: var(--orangeColor);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 10px;
+          }
+          svg {
+            font-size: 18px;
+            color: white;
+          }
+        }
+      }
+    }
+    .price {
+      font-size: 18px;
+      color: var(--primarycolor);
+      span {
+        color: var(--orangeColor);
+        font-size: 16px;
+      }
+    }
+  }
+
+}
+  .CheckOut {
+    width: 100%;
+    .total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h3{
+        font-size: 18px;
+        color: var(--primarycolor);
+      }
+
+      .price{
+        color: var(--primarycolor);
+        font-size: 18px;
+        font-weight: 500;
+        span{
+          font-size: 16px;
+          color: var(--orangeColor);
+        }
+      }
+      
+    }.btn{
+      margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 100vw;
+        border: 0;
+        outline: 0;
+        color: white;
+        background-color: var(--orangeColor);
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      }
+  }
