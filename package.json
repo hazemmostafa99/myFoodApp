@@ -1,6 +1,6 @@
 {
-  "homepage": "http://hazemmostafa99.github.io/FoodApp",
-  "name": "food",
+  "homepage": "http://hazemmostafa99.github.io/myFoodApp",
+  "name": "food-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
